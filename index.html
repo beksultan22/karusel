@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .button{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 30px;
+            background: cornsilk;
+        }
+        .image{
+            display: inline-block;
+            width: 550px;
+            height: 500px;
+        }
+        body{
+            background: cyan;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <button name="" onclick="tap1()" class="button">←</button>
+            <img src="images1.png" id="image" class="image">
+            <button name="" onclick="tap2()" class="button">→</button>
+        </div>
+    </center>
+
+<script>
+    frame=1
+    function tap1() {
+        frame--
+        if (frame == 0){
+            frame = 6
+        }
+        render(frame)
+    }
+    function tap2() {
+        frame++
+         if (frame == 7){
+             frame = 1
+         }
+         render(frame)
+    }
+     function render(x) {
+         document.getElementById('image').src = 'images'+x+'.png'
+     }
+</script>
+
+</body>
+</html>
